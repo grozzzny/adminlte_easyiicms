@@ -1,0 +1,24 @@
+{
+    "name": "grozzzny/adminlte_easyiicms",
+    "description": "Adminlte for EasyiiCMS",
+    "keywords": ["yii", "easyiiCMS", "CMS", "module"],
+    "type": "yii2-extension",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitriy Groznyy",
+            "email": "grozzzny@gmail.com",
+            "homepage": "http://pr-kenig.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "grozzzny/base_module": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "grozzzny\\adminlte_easyiicms\\": ""
+        }
+    }
+}
