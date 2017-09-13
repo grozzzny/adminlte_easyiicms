@@ -1,4 +1,6 @@
 <?php
+use dmstr\web\AdminLteAsset;
+use grozzzny\adminlte_easyiicms\assets\AdminlteEasyiicmsAsset;
 use yii\helpers\Html;
 use yii\easyii\assets\AdminAsset;
 
@@ -6,10 +8,9 @@ use yii\easyii\assets\AdminAsset;
 /* @var $content string */
 
 
-$asset = AdminAsset::register($this);
-$moduleName = $this->context->module->id;
-
-dmstr\web\AdminLteAsset::register($this);
+AdminAsset::register($this);
+AdminLteAsset::register($this);
+AdminlteEasyiicmsAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
