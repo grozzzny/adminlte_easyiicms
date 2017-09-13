@@ -41,7 +41,7 @@ return $config;
 ```
 
 ## Screenshots
-![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/2017-09-13_11-20-02.png)
-![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/2017-09-13_11-21-02.png)
-![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/2017-09-13_11-21-18.png)
-![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/2017-09-13_11-21-38.png)
+![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/images/2017-09-13_11-20-02.png)
+![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/images/2017-09-13_11-21-02.png)
+![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/images/2017-09-13_11-21-18.png)
+![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/images/2017-09-13_11-21-38.png)
