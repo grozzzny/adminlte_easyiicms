@@ -40,6 +40,38 @@ $config['modules']['admin']['layout'] = '@grozzzny/adminlte_easyiicms/views/layo
 return $config;
 ```
 
+### Skins
+
+By default the extension uses blue skin for AdminLTE. You can change it in config file.
+
+```php
+'components' => [
+    'assetManager' => [
+        'bundles' => [
+            'dmstr\web\AdminLteAsset' => [
+                'skin' => 'skin-black',
+            ],
+        ],
+    ],
+],
+```
+Here is the list of available skins:
+
+```
+"skin-blue",
+"skin-black",
+"skin-red",
+"skin-yellow",
+"skin-purple",
+"skin-green",
+"skin-blue-light",
+"skin-black-light",
+"skin-red-light",
+"skin-yellow-light",
+"skin-purple-light",
+"skin-green-light"
+```
+
 ## Screenshots
 ![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/images/2017-09-13_11-20-02.png)
 ![alt text](https://raw.githubusercontent.com/grozzzny/adminlte_easyiicms/master/media/images/2017-09-13_11-21-02.png)
