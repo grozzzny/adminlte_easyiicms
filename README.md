@@ -1,9 +1,9 @@
-Adminlte form for EasyiiCMS 
+Admin panel "AdminLTE" (Adaptive layout) form for EasyiiCMS 
 ==============================
 
 This module allows to [Easy yii2 cms](http://github.com/noumo/easyii) 
 
-Built on top of Bootstrap 3, AdminLTE provides a range of responsive, reusable, and commonly used components. [more..](https://adminlte.io/themes/AdminLTE/index2.html) 
+Built on top of Bootstrap 3, AdminLTE provides a range of responsive, reusable, and commonly used components. [More..](https://adminlte.io/themes/AdminLTE/index2.html) 
 
 ## Installation guide
 
