@@ -9,7 +9,7 @@ $position = Setting::get('toolbar_position') === 'bottom' ? 'bottom' : 'top';
 $this->registerCss('body {padding-'.$position.': 50px;}');
 $this->registerCss('
 #easyii-navbar{
-    background-color: #3c8dbc;
+    background-color: #303030;
     border: none;
 }
 #easyii-navbar .navbar-left li:first-child {

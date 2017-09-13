@@ -9,7 +9,7 @@ use yii\easyii\assets\AdminAsset;
 
 
 AdminAsset::register($this);
-AdminLteAsset::register($this);
+$adminLteAsset = AdminLteAsset::register($this);
 AdminlteEasyiicmsAsset::register($this);
 
 ?>
@@ -23,7 +23,7 @@ AdminlteEasyiicmsAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition <?= $adminLteAsset->skin == '_all-skins' ? 'skin-blue' : $adminLteAsset->skin?> sidebar-mini">
 <?php $this->beginBody() ?>
 <div class="wrapper">
 
