@@ -3,16 +3,19 @@ Adminlte form for EasyiiCMS
 
 This module allows to [Easy yii2 cms](http://github.com/noumo/easyii) 
 
-AdminLTE [See](https://adminlte.io/themes/AdminLTE/index2.html) 
+Built on top of Bootstrap 3, AdminLTE provides a range of responsive, reusable, and commonly used components. [more..](https://adminlte.io/themes/AdminLTE/index2.html) 
 
 ## Installation guide
 
 ```bash
 $ php composer.phar require grozzzny/adminlte_easyiicms "dev-master"
+```
 or
+```bash
 $ composer require grozzzny/adminlte_easyiicms "dev-master"
-
+```
 or composer.json:
+```json
 "require": {
   "grozzzny/adminlte_easyiicms": "dev-master"
 }
