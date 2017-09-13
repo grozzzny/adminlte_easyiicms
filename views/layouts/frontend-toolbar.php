@@ -8,6 +8,19 @@ $asset = FrontendAsset::register($this);
 $position = Setting::get('toolbar_position') === 'bottom' ? 'bottom' : 'top';
 $this->registerCss('body {padding-'.$position.': 50px;}');
 $this->registerCss('
+#easyii-navbar{
+    background-color: #3c8dbc;
+    border: none;
+}
+#easyii-navbar .navbar-left li:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+}
+#easyii-navbar a, #easyii-navbar .navbar-text {
+    color: #ffffff;
+}
+#easyii-navbar .switcher {
+    background: #ebebeb;
+}
 @media only screen and (max-width: 768px) {
   #easyii-navbar li a, #easyii-navbar .navbar-text {
     width: 16px;

@@ -1,97 +1,84 @@
 <?
 use yii\helpers\Url;
+
+/**
+ * @var \yii\web\View $this
+ */
 ?>
 
 <aside class="main-sidebar">
 
     <section class="sidebar">
 
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu tree" data-widget="tree">
+            <li class="header">
+                <?= Yii::t('easyii', 'Settings') ?>:
+            </li>
+            <li class="<?= in_array($this->context->id, ['modules', 'settings', 'admins', 'system', 'logs']) ? 'active' :'' ?>">
+                <a href="#" class="menu-item ">
+                    <i class="glyphicon glyphicon-cog"></i>
+                    <span>
+                        <?= Yii::t('easyii', 'Settings') ?>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="treeview <?= ($this->context->id == 'settings') ? 'active' :'' ?>">
+                        <a href="<?= Url::to(['/admin/settings']) ?>">
+                            <i class="glyphicon glyphicon-cog"></i>
+                            <span>
+                                <?= Yii::t('easyii', 'Settings') ?>
+                            </span>
+                        </a>
+                    </li>
+                    <?php if(IS_ROOT) : ?>
+                        <li class="<?= ($this->context->id == 'modules') ? 'active' :'' ?>">
+                            <a href="<?= Url::to(['/admin/modules']) ?>">
+                                <i class="glyphicon glyphicon-folder-close"></i>
+                                <span>
+                                    <?= Yii::t('easyii', 'Modules') ?>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="<?= ($this->context->id == 'admins') ? 'active' :'' ?>">
+                            <a href="<?= Url::to(['/admin/admins']) ?>">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <span><?= Yii::t('easyii', 'Admins') ?><span>
+                            </a>
+                        </li>
+                        <li class="<?= ($this->context->id == 'system') ? 'active' :'' ?>">
+                            <a href="<?= Url::to(['/admin/system']) ?>">
+                                <i class="glyphicon glyphicon-hdd"></i>
+                                <span><?= Yii::t('easyii', 'System') ?></span>
+                            </a>
+                        </li>
+                        <li class="<?= ($this->context->id == 'logs') ? 'active' :'' ?>">
+                            <a href="<?= Url::to(['/admin/logs']) ?>">
+                                <i class="glyphicon glyphicon-align-justify"></i>
+                                <span><?= Yii::t('easyii', 'Logs') ?></span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </li>
+            <li class="header"><?= Yii::t('easyii', 'Modules') ?>:</li>
             <?php foreach(Yii::$app->getModule('admin')->activeModules as $module) : ?>
-            <li>
-                <a href="<?= Url::to(["/admin/$module->name"]) ?>" class="menu-item <?= ($moduleName == $module->name ? 'active' : '') ?>">
+            <li class="treeview <?= ($this->context->module->id == $module->name ? 'active' : '') ?>">
+                <a href="<?= Url::to(["/admin/$module->name"]) ?>">
                     <?php if($module->icon != '') : ?>
                         <i class="glyphicon glyphicon-<?= $module->icon ?>"></i>
                     <?php endif; ?>
-                    <?= $module->title ?>
+                    <span>
+                        <?= $module->title ?>
+                    </span>
                     <?php if($module->notice > 0) : ?>
-                        <span class="badge"><?= $module->notice ?></span>
+                    <span class="pull-right-container">
+                      <span class="label label-primary pull-right"><?= $module->notice ?></span>
+                    </span>
                     <?php endif; ?>
                 </a>
             </li>
             <?php endforeach; ?>
-            <li>
-                <a href="<?= Url::to(['/admin/settings']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'settings') ? 'active' :'' ?>">
-                    <i class="glyphicon glyphicon-cog"></i>
-                    <?= Yii::t('easyii', 'Settings') ?>
-                </a>
-            </li>
-        <?php if(IS_ROOT) : ?>
-            <li>
-                <a href="<?= Url::to(['/admin/modules']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'modules') ? 'active' :'' ?>">
-                    <i class="glyphicon glyphicon-folder-close"></i>
-                    <?= Yii::t('easyii', 'Modules') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?= Url::to(['/admin/admins']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'admins') ? 'active' :'' ?>">
-                    <i class="glyphicon glyphicon-user"></i>
-                    <?= Yii::t('easyii', 'Admins') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?= Url::to(['/admin/system']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'system') ? 'active' :'' ?>">
-                    <i class="glyphicon glyphicon-hdd"></i>
-                    <?= Yii::t('easyii', 'System') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?= Url::to(['/admin/logs']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'logs') ? 'active' :'' ?>">
-                    <i class="glyphicon glyphicon-align-justify"></i>
-                    <?= Yii::t('easyii', 'Logs') ?>
-                </a>
-            </li>
-        <?php endif; ?>
         </ul>
 
-<!--        --><?//= dmstr\widgets\Menu::widget(
-//            [
-//                'options' => ['class' => 'sidebar-menu'],
-//                'items' => [
-//                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-//                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-//                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
-//                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-//                    [
-//                        'label' => 'Same tools',
-//                        'icon' => 'share',
-//                        'url' => '#',
-//                        'items' => [
-//                            ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-//                            ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug'],],
-//                            [
-//                                'label' => 'Level One',
-//                                'icon' => 'circle-o',
-//                                'url' => '#',
-//                                'items' => [
-//                                    ['label' => 'Level Two', 'icon' => 'circle-o', 'url' => '#',],
-//                                    [
-//                                        'label' => 'Level Two',
-//                                        'icon' => 'circle-o',
-//                                        'url' => '#',
-//                                        'items' => [
-//                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-//                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-//                                        ],
-//                                    ],
-//                                ],
-//                            ],
-//                        ],
-//                    ],
-//                ],
-//            ]
-//        ) ?>
-
     </section>
-
 </aside>
