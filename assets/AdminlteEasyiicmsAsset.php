@@ -9,6 +9,10 @@ class AdminlteEasyiicmsAsset extends \yii\web\AssetBundle
         'adminlte_easyiicms.css',
     ];
 
+    public $js = [
+        'jquery-migrate-3.0.0.js',
+    ];
+
     public $jsOptions = array(
         'position' => \yii\web\View::POS_HEAD
     );
