@@ -14,7 +14,8 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "dmstr/yii2-adminlte-asset": "2.*"
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "grozzzny/depends": "dev-master"
     },
     "autoload": {
         "psr-4": {
