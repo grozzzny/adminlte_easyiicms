@@ -14,15 +14,18 @@ use yii\helpers\Url;
             <li class="header">
                 <?= Yii::t('easyii', 'Settings') ?>:
             </li>
-            <li class="<?= in_array($this->context->id, ['modules', 'settings', 'admins', 'system', 'logs']) ? 'active' :'' ?>">
+            <li class="treeview <?= in_array($this->context->id, ['modules', 'settings', 'admins', 'system', 'logs']) ? 'active' :'' ?>">
                 <a href="#" class="menu-item ">
                     <i class="glyphicon glyphicon-cog"></i>
                     <span>
                         <?= Yii::t('easyii', 'Settings') ?>
                     </span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="treeview <?= ($this->context->id == 'settings') ? 'active' :'' ?>">
+                    <li class="<?= ($this->context->id == 'settings') ? 'active' :'' ?>">
                         <a href="<?= Url::to(['/admin/settings']) ?>">
                             <i class="glyphicon glyphicon-cog"></i>
                             <span>
@@ -62,7 +65,7 @@ use yii\helpers\Url;
             </li>
             <li class="header"><?= Yii::t('easyii', 'Modules') ?>:</li>
             <?php foreach(Yii::$app->getModule('admin')->activeModules as $module) : ?>
-            <li class="treeview <?= ($this->context->module->id == $module->name ? 'active' : '') ?>">
+            <li class="<?= ($this->context->module->id == $module->name ? 'active' : '') ?>">
                 <a href="<?= Url::to(["/admin/$module->name"]) ?>">
                     <?php if($module->icon != '') : ?>
                         <i class="glyphicon glyphicon-<?= $module->icon ?>"></i>

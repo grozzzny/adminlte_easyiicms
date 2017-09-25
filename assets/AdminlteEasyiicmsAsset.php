@@ -8,9 +8,6 @@ class AdminlteEasyiicmsAsset extends \yii\web\AssetBundle
     public $css = [
         'adminlte_easyiicms.css',
     ];
-    public $js = [
-        'app.min.js',
-    ];
     public $depends = [
         'grozzzny\depends\jquery_migrate\JqueryMigrateAsset',
     ];

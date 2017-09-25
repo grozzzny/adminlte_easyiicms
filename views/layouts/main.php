@@ -1,5 +1,5 @@
 <?php
-use dmstr\web\AdminLteAsset;
+use grozzzny\adminlte_easyiicms\assets\AdminLteAsset;
 use grozzzny\adminlte_easyiicms\assets\AdminlteEasyiicmsAsset;
 use yii\helpers\Html;
 use yii\easyii\assets\AdminAsset;

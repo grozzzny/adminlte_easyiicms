@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "dmstr/yii2-adminlte-asset": "2.*",
+        "almasaeed2010/adminlte": "dev-master",
         "grozzzny/depends": "dev-master"
     },
     "autoload": {

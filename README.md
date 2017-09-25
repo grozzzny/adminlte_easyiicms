@@ -48,7 +48,7 @@ By default the extension uses blue skin for AdminLTE. You can change it in confi
 'components' => [
     'assetManager' => [
         'bundles' => [
-            'dmstr\web\AdminLteAsset' => [
+            'grozzzny\adminlte_easyiicms\assets\AdminLteAsset' => [
                 'skin' => 'skin-black',
             ],
         ],

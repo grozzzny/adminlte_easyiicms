@@ -1,6 +1,6 @@
 <?php
+use yii\bootstrap\Alert;
 use yii\widgets\Breadcrumbs;
-use dmstr\widgets\Alert;
 
 ?>
 <div class="content-wrapper">
@@ -30,7 +30,14 @@ use dmstr\widgets\Alert;
     </section>
 
     <section class="content">
-        <?= Alert::widget() ?>
+        <?php foreach (Yii::$app->session->getAllFlashes() as $type => $message) : ?>
+            <?php if (in_array($type, ['success', 'danger', 'warning', 'info'])): ?>
+                <?= Alert::widget([
+                    'options' => ['class' => 'alert-dismissible alert-' . $type],
+                    'body' => $message
+                ]) ?>
+            <?php endif ?>
+        <?php endforeach; ?>
         <?= $content ?>
     </section>
 </div>
